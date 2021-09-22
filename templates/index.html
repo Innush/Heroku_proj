@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="Login">
+     <h1>Predict Loan Approval </h1>
+     <form action="{{url_for('predict')}}"method="post">
+         <input type="text" name="age" placeholder="Age" required="required" />
+         <input type="text" name="experience" placeholder="experience" required="required" />
+         <input type="text" name="income" placeholder="income" required="required" />
+         <input type="text" name="zip_code" placeholder="zip_code" required="required" />
+         <input type="text" name="family" placeholder="family" required="required" />
+         <input type="text" name="cCAvg" placeholder="cCAvg" required="required" />
+         <input type="text" name="education" placeholder="education" required="required" />
+
+         <button type="submit" name="btn btn-primary btn-large">Predict</button>
+     </form>
+
+
+
+     <br>
+     <br>
+     {{ prediction_text }}
+ </div>
+
+</body>
+</html>
